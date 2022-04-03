@@ -1,0 +1,7 @@
+{
+    "javascript": [
+        "/App_Plugins/SecretStore/backoffice/dialogs/secretDialog.controller.js",
+        "/App_Plugins/SecretStore/backoffice/resources/secretStore.resource.js",
+        "/App_Plugins/SecretStore/backoffice/secretStore/overview.controller.js"
+    ]
+}

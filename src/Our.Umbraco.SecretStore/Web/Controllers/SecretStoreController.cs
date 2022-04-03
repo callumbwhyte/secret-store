@@ -2,10 +2,12 @@ using System.Web.Http;
 using Our.Umbraco.SecretStore.Services;
 using Umbraco.Web.Editors;
 using Umbraco.Web.WebApi;
+using Umbraco.Web.WebApi.Filters;
+using Applications = Umbraco.Core.Constants.Applications;
 
 namespace Our.Umbraco.SecretStore.Web.Controllers
 {
-    [UmbracoAuthorize(Roles = "admin")]
+    [UmbracoApplicationAuthorize(Applications.Settings)]
     [JsonCamelCaseFormatter]
     public class SecretStoreController : UmbracoAuthorizedJsonController
     {

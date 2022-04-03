@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<language alias="en" intName="English" localName="English" lcid="" culture="en">
+  <area alias="actions">
+    <key alias="addSecret">Add secret</key>
+  </area>
+  <area alias="general">
+    <key alias="processed">Processed</key>
+    <key alias="saved">Saved</key>
+    <key alias="secret">Secret</key>
+    <key alias="updateDate">Update Date</key>
+  </area>
+  <area alias="treeHeaders">
+    <key alias="secretStore">Secrets</key>
+  </area>
+</language>

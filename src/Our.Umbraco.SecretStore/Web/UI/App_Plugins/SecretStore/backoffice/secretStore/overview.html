@@ -1,0 +1,88 @@
+<div ng-controller="Our.Umbraco.SecretStore.OverviewController as vm">
+
+  <umb-editor-view footer="false">
+
+    <umb-editor-header name="vm.labels.title"
+                       name-locked="true"
+                       hide-icon="true"
+                       hide-description="true"
+                       hide-alias="true">
+    </umb-editor-header>
+
+    <umb-editor-container>
+
+      <umb-load-indicator ng-if="vm.loading"></umb-load-indicator>
+
+      <umb-editor-sub-header ng-class="{'--state-selection': vm.selectedItems.length}" ng-if="!vm.loading">
+
+        <umb-editor-sub-header-content-left>
+
+          <umb-editor-sub-header-section ng-if="!vm.selectedItems.length">
+
+            <umb-button type="button"
+                        button-style="outline"
+                        action="vm.addItem()"
+                        label-key="actions_addSecret">
+            </umb-button>
+
+          </umb-editor-sub-header-section>
+
+          <umb-editor-sub-header-section ng-if="vm.selectedItems.length">
+
+            <umb-button type="button"
+                        button-style="white"
+                        action="vm.clearAll()"
+                        label-key="buttons_clearSelection">
+            </umb-button>
+
+          </umb-editor-sub-header-section>
+
+          <umb-editor-sub-header-section ng-if="vm.selectedItems.length">
+
+            <strong ng-if="!vm.bulkActionProcessing">{{vm.selectedItems.length}} <localize key="general_of">of</localize> {{vm.items.length}} <localize key="general_selected">selected</localize></strong>
+
+            <strong ng-if="vm.bulkActionProcessing">{{vm.bulkActionCount}} <localize key="general_of">of</localize> {{vm.selectedItems.length}} <localize key="general_processed">processed</localize></strong>
+
+            <umb-loader position="bottom" ng-if="vm.bulkActionProcessing"></umb-loader>
+
+          </umb-editor-sub-header-section>
+
+        </umb-editor-sub-header-content-left>
+
+        <umb-editor-sub-header-content-right ng-if="vm.selectedItems.length">
+
+          <umb-button type="button"
+                      button-style="white"
+                      icon="icon-trash"
+                      action="vm.deleteSelected()"
+                      label-key="actions_delete"
+                      add-ellipsis="true">
+          </umb-button>
+
+        </umb-editor-sub-header-content-right>
+
+      </umb-editor-sub-header>
+
+      <umb-editor-content ng-if="!vm.loading">
+
+        <umb-table ng-if="vm.items.length"
+                   items="vm.items"
+                   item-properties="vm.options.includeProperties"
+                   allow-select-all="true"
+                   on-click="vm.selectItem(item)"
+                   on-select="vm.selectItem(item)"
+                   on-select-all="vm.selectAll()"
+                   on-selected-all="vm.isSelectedAll()">
+        </umb-table>
+
+        <umb-empty-state ng-if="!vm.items.length" position="center">
+          No keys yet
+        </umb-empty-state>
+
+      </umb-editor-content>
+
+    </umb-editor-container>
+
+  </umb-editor-view>
+
+</div>
