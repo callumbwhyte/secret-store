@@ -121,7 +121,7 @@
                 return {
                   name: x.name,
                   icon: "icon-key",
-                  updateDate: $filter("date")(x.updateDate, "yyyy-MM-dd hh:mm:ss")
+                  updateDate: $filter("date")(x.updateDate, "yyyy-MM-dd HH:mm:ss")
                 };
               });
               // remove loading state

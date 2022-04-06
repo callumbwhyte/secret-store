@@ -35,7 +35,7 @@ For security reasons it is not possible to view secret values in the backoffice,
 
 To replace the value for an existing key, either:
 
-- Delete the existing key can add it again with the new value
+- Delete the existing key and add it again with the new value
 - Create a new key with the same name as the existing key - it will replace the existing value
 
 ### Accessing secrets
